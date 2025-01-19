@@ -37,6 +37,24 @@ nav a.current {
   }
   
 nav a:hover {
-    border-bottom: 0.4em solid var(--color-accent);
-    background-color: oklch(95% 5% 0);
+  border-bottom: 0.4em solid var(--color-accent);
+  background-color: oklch(95% 5% 0);
   }
+  form {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1em;
+}
+
+label {
+    grid-column: 1; 
+    align-self: center; 
+}
+
+input, textarea, button {
+    grid-column: 2; 
+}
+
+button {
+    grid-column: 1 / -1;
+}
