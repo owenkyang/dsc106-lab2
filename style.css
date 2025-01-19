@@ -83,3 +83,76 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
   text-wrap: balance;
 }
+.resume-page {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  max-width: 100ch;
+  margin-inline: max(1em, (100% - 100ch) / 2);
+  padding-inline: 1em;
+  background-color: #f4f4f9;
+  color: #333;
+  text-align: center;
+}
+.resume-page header {
+  text-align: center;
+  margin: 2em 0;
+}
+.resume-page header h1 {
+  font-size: 2.5em;
+  color: #ff6f61;
+}
+
+.resume-page header p a {
+  color: #ff6f61;
+  text-decoration: none;
+}
+
+.resume-page header p a:hover {
+  text-decoration: underline;
+}
+.resume-page section {
+  max-width: 800px;
+  margin: 2em auto;
+  background: white;
+  padding: 2em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.resume-page section h2 {
+  color: #333;
+  margin-bottom: 1em;
+  border-bottom: 2px solid #ff6f61;
+  display: inline-block;
+  padding-bottom: 0.2em;
+}
+
+.resume-page article {
+  margin-bottom: 1.5em;
+}
+
+.resume-page article h3 {
+  color: #ff6f61;
+  margin-bottom: 0.5em;
+}
+
+.resume-page article ul {
+  margin: 0;
+  padding-left: 1.2em;
+  list-style-type: disc;
+}
+.resume-page section ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.resume-page section ul li {
+  background: #f4f4f9;
+  padding: 0.5em 1em;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
