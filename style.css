@@ -1,18 +1,42 @@
 body {
-    /* Set line height to 1.5 times the font size
-         and use the OS’s UI font as the website font
-       */
     font: 100%/1.5 system-ui;
     max-width: 80ch;
     margin-inline: auto;
     padding: 0px 300px 0px 0px;
   }
-nav ul, nav li {
-    display: contents;  
+:root {
+    --color-accent: oklch(65% 50% 0);
   }
+  
+html {
+    accent-color: var(--color-accent);
+  }
+  
 nav {
-  display: flex;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 1em;
+    border-bottom: 1px solid oklch(80% 3% 200);
+    padding: 0.5em 0;
   }
-  nav a {
+  
+nav a {
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
     flex: 1;
+    padding: 0.5em;
+    border-bottom: 0;
+    transition: all 0.3s ease-in-out;
+  }
+  
+nav a.current {
+    border-bottom: 0.4em solid oklch(80% 3% 200);
+    padding-bottom: 0.1em;
+  }
+  
+nav a:hover {
+    border-bottom: 0.4em solid var(--color-accent);
+    background-color: oklch(95% 5% 0);
   }
