@@ -1,14 +1,12 @@
 :root {
   color-scheme: light dark;
-  /* Existing variables */
+
   --color-accent: oklch(65% 50% 0);
 
-  /* New border color for adaptability in light and dark modes */
   --border-color: oklch(50% 10% 200 / 40%);
   --hover-bg-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 }
 
-/* General styles */
 body {
   font: 100%/1.5 system-ui;
   line-height: 1.6;
@@ -27,8 +25,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   margin-bottom: 1em;
-  border-bottom: 1px solid var(--border-color); /* Use dynamic border color */
-  padding: 0.5em 0;
+  border-bottom: 1px solid var(--border-color); 
 }
 
 nav a {
@@ -42,13 +39,13 @@ nav a {
 }
 
 nav a.current {
-  border-bottom: 0.4em solid var(--border-color); /* Adapt border color */
+  border-bottom: 0.4em solid var(--border-color); 
   padding-bottom: 0.1em;
 }
 
 nav a:hover {
-  border-bottom: 0.4em solid var(--color-accent); /* Use accent color for hover */
-  background-color: var(--hover-bg-color); /* Adapt hover background color */
+  border-bottom: 0.4em solid var(--color-accent); 
+  background-color: var(--hover-bg-color); 
 }
 
 form {
@@ -142,14 +139,14 @@ h6 {
 
 
 .color-scheme {
-  position: absolute; /* Remove from document flow and position relative to the viewport */
-  top: 1rem; /* Distance from the top */
-  right: 1rem; /* Distance from the right */
-  font-size: 80%; /* Slightly smaller font size for less prominence */
-  font-family: inherit; /* Inherit font-family from the parent */
+  position: absolute; 
+  top: 1rem; 
+  right: 1rem; 
+  font-size: 80%; 
+  font-family: inherit; 
 }
 .color-scheme select {
-  font-family: inherit; /* Ensure dropdown font matches the site's font */
-  font-size: inherit; /* Match the smaller font size */
+  font-family: inherit; 
+  font-size: inherit;
 }
 
