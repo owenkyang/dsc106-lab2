@@ -1,158 +1,155 @@
-body {
-    font: 100%/1.5 system-ui;
-    line-height: 1.6;
-    max-width: 100ch;
-    margin-inline: max(1em, (100% - 100ch) / 2);
-    padding-inline: 1em;
-    text-align: center;
-  }
 :root {
-    --color-accent: oklch(65% 50% 0);
-  }
-  
+  color-scheme: light dark;
+  /* Existing variables */
+  --color-accent: oklch(65% 50% 0);
+
+  /* New border color for adaptability in light and dark modes */
+  --border-color: oklch(50% 10% 200 / 40%);
+  --hover-bg-color: color-mix(in oklch, var(--color-accent), canvas 85%);
+}
+
+/* General styles */
+body {
+  font: 100%/1.5 system-ui;
+  line-height: 1.6;
+  max-width: 100ch;
+  margin-inline: max(1em, (100% - 100ch) / 2);
+  padding-inline: 1em;
+  text-align: center;
+}
+
 html {
-    accent-color: var(--color-accent);
-  }
-  
+  accent-color: var(--color-accent);
+}
+
 nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-bottom: 1em;
-    border-bottom: 1px solid oklch(80% 3% 200);
-    padding: 0.5em 0;
-  }
-  
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 1em;
+  border-bottom: 1px solid var(--border-color); /* Use dynamic border color */
+  padding: 0.5em 0;
+}
+
 nav a {
-    text-decoration: none;
-    color: inherit;
-    text-align: center;
-    flex: 1;
-    padding: 0.5em;
-    border-bottom: 0;
-    transition: all 0.3s ease-in-out;
-  }
-  
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  flex: 1;
+  padding: 0.5em;
+  border-bottom: 0;
+  transition: all 0.3s ease-in-out;
+}
+
 nav a.current {
-    border-bottom: 0.4em solid oklch(80% 3% 200);
-    padding-bottom: 0.1em;
-  }
-  
+  border-bottom: 0.4em solid var(--border-color); /* Adapt border color */
+  padding-bottom: 0.1em;
+}
+
 nav a:hover {
-  border-bottom: 0.4em solid var(--color-accent);
-  background-color: oklch(95% 5% 0);
-  }
-  form {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 1em;
+  border-bottom: 0.4em solid var(--color-accent); /* Use accent color for hover */
+  background-color: var(--hover-bg-color); /* Adapt hover background color */
+}
+
+form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
 }
 
 label {
-    grid-column: 1; 
-    align-self: center; 
+  grid-column: 1;
+  align-self: center;
 }
 
-input, textarea, button {
-    grid-column: 2; 
+input,
+textarea,
+button {
+  grid-column: 2;
 }
 
 button {
-    grid-column: 1 / -1;
+  grid-column: 1 / -1;
 }
+
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); 
-  gap: 1em; 
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  gap: 1em;
 }
+
 article {
   display: grid;
-  grid-template-rows: subgrid; 
-  grid-row: span 3; 
-  gap: 1em; 
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+  gap: 1em;
 }
 
 article h2 {
   margin: 0;
 }
+
 h1 {
-  font-size: 400%; 
+  font-size: 400%;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   line-height: 1.1;
   text-wrap: balance;
 }
+
 .resume-page {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  max-width: 100ch;
-  margin-inline: max(1em, (100% - 100ch) / 2);
-  padding-inline: 1em;
-  background-color: #f4f4f9;
-  color: #333;
-  text-align: center;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
-.resume-page header {
-  text-align: center;
-  margin: 2em 0;
+
+.resume-page section {
+  background: var(--section-bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--section-border-color);
 }
+
 .resume-page header h1 {
-  font-size: 2.5em;
-  color: #ff6f61;
+  color: var(--header-color);
 }
 
 .resume-page header p a {
-  color: #ff6f61;
-  text-decoration: none;
+  color: var(--header-color);
 }
 
 .resume-page header p a:hover {
-  text-decoration: underline;
-}
-.resume-page section {
-  max-width: 800px;
-  margin: 2em auto;
-  background: white;
-  padding: 2em;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  color: var(--link-hover-color);
 }
 
 .resume-page section h2 {
-  color: #333;
-  margin-bottom: 1em;
-  border-bottom: 2px solid #ff6f61;
-  display: inline-block;
-  padding-bottom: 0.2em;
-}
-
-.resume-page article {
-  margin-bottom: 1.5em;
+  color: var(--text-color);
+  border-bottom: 2px solid var(--header-color);
 }
 
 .resume-page article h3 {
-  color: #ff6f61;
-  margin-bottom: 0.5em;
-}
-
-.resume-page article ul {
-  margin: 0;
-  padding-left: 1.2em;
-  list-style-type: disc;
-}
-.resume-page section ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5em;
+  color: var(--header-color);
 }
 
 .resume-page section ul li {
-  background: #f4f4f9;
-  padding: 0.5em 1em;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background: var(--section-bg-color);
+  border: 1px solid var(--section-border-color);
 }
+
+
+.color-scheme {
+  position: absolute; /* Remove from document flow and position relative to the viewport */
+  top: 1rem; /* Distance from the top */
+  right: 1rem; /* Distance from the right */
+  font-size: 80%; /* Slightly smaller font size for less prominence */
+  font-family: inherit; /* Inherit font-family from the parent */
+}
+.color-scheme select {
+  font-family: inherit; /* Ensure dropdown font matches the site's font */
+  font-size: inherit; /* Match the smaller font size */
+}
+
