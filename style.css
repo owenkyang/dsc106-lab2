@@ -177,4 +177,74 @@ h6 {
   font-weight: bold;
   margin: 0;
 }
+#projects-pie-plot {
+  max-width: 20em;
+  margin-block: 2em;
 
+  overflow: visible;
+}
+.container {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.legend {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  list-style: none;
+  padding: 0.5em 1em;
+  margin: 1em auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-width: fit-content;
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 0.9em;
+  white-space: nowrap;
+}
+
+.swatch {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: 1px solid #aaa;
+}
+.searchBar {
+  width: 50%;
+  max-width: 400px;
+  padding: 0.5em;
+  margin: 1em auto;
+  display: block;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #222;
+  color: white;
+}
+
+&:has(path:hover) {
+  path:not(:hover) {
+    opacity: 0.5;
+  }
+}
+path {
+  transition: 300ms;
+  cursor: pointer;
+}
+.selected {
+  --color: oklch(30% 85% 0) !important;
+
+  &:is(path) {
+    fill: var(--color);
+  }
+}
+.legend li.selected .swatch {
+  background-color: var(--color) !important;
+}

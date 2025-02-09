@@ -88,7 +88,6 @@ export async function fetchJSON(url) {
 }
 
 export function renderProjects(projects, containerElement, headingLevel = 'h2') {
-
     if (!containerElement) {
         console.error("Invalid container element provided for rendering projects.");
         return;
@@ -113,8 +112,15 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
 
         let description = document.createElement('p');
         description.textContent = project.description;
-        article.append(heading, image, description);
 
+        let year = document.createElement('p');
+        year.textContent = `c. ${project.year}`;
+        year.style.fontStyle = 'italic';  // Italicize year like in the example
+
+        let contentWrapper = document.createElement('div'); 
+        contentWrapper.append(description, year); // Wrap description and year together
+
+        article.append(heading, image, contentWrapper);
         containerElement.appendChild(article);
     });
 }
