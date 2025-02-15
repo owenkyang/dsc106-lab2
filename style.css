@@ -248,3 +248,84 @@ path {
 .legend li.selected .swatch {
   background-color: var(--color) !important;
 }
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  text-align: center;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+.stats dt {
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+  text-align: left;
+}
+
+.stats dd {
+  font-size: 18px;
+  font-weight: normal;
+  color: #000;
+  text-align: right;
+  margin: 0;
+}
+.gridlines line {
+  stroke: #ddd; /* Light gray color */
+  stroke-opacity: 0.7; /* Reduce opacity */
+  shape-rendering: crispEdges; /* Ensure sharp lines */
+}
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle:hover {
+  transform: scale(1.5);
+}
+dl.info {
+  display: grid;
+  grid-template-columns: max-content auto; /* Labels in column 1, values in column 2 */
+  gap: 5px 15px; /* Add spacing between elements */
+  align-items: center;
+  margin: 0; /* Remove default margins */
+  padding: 10px;
+  background: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+}
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+dl.info dt {
+  font-weight: bold;
+  color: #666; /* Make labels less prominent */
+  text-align: right;
+}
+
+dl.info dd {
+  font-weight: normal;
+  color: #000; /* Values should stand out */
+  margin: 0;
+}
+.tooltip {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  background: white;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  z-index: 1000; /* Ensure it's above other elements */
+}
+circle.selected {
+  fill: #ff6b6b;
+}

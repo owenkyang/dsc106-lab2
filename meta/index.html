@@ -8,6 +8,32 @@
 </head>
 <body>
     <h1 class="Meta-title">Meta</h1>
+    <div id="stats"></div>
+    <h2>Commits by time of day</h2>
+    <div id="chart"></div>
+    <dl id="commit-tooltip" class="info tooltip" hidden>
+        <dt>Commit</dt>
+        <dd>
+          <a href="" id="commit-link" target="_blank"></a>
+        </dd>
+      
+        <dt>Date</dt>
+        <dd id="commit-date"></dd>
+        <dt>Time</dt>
+        <dd id="commit-time"></dd>
+    
+        <!-- Commit author -->
+        <dt>Author</dt>
+        <dd id="commit-author"></dd>
+    
+        <!-- Total lines edited in this commit -->
+        <dt>Lines Edited</dt>
+        <dd id="commit-lines"></dd>
+      </dl>
+      <p id="selection-count">No commits selected</p>
+      <dl id="language-breakdown" class="stats"></dl>
     <script src="../global.js" type="module"></script>
+    <script src="main.js" type="module"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
 </body>
 </html>
