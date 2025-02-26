@@ -1,9 +1,9 @@
 [
     {
-        "title": "Lorem ipsum dolor sit.",
-        "year": "2020",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati consequatur modi reiciendis cum amet provident delectus repellat, rerum totam quidem ad voluptates quas animi odit culpa quos quaerat corrupti inventore!"
+        "title": "Bike Watching Visualization",
+        "year": "2025",
+        "image": "./images/visualization.png",
+        "description": "A bike watching visualization of Boston"
     },
     {
         "title": "Eaque enim doloremque possimus.",
