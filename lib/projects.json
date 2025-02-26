@@ -2,7 +2,7 @@
     {
         "title": "Bike Watching Visualization",
         "year": "2025",
-        "image": "./images/visualization.png",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "A bike watching visualization of Boston"
     },
     {
